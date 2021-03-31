@@ -16,8 +16,8 @@ app.post("/webhook", (request, response) => {
           {
             text: {
               //fulfillment text response to be sent to the agent
-              text: ["Hi! This is a webhook response"]
-              text: ["Hi! This is a ${tag} response"]
+              text: ["Hi! This is a webhook response, Hi! This is a ${tag} response"]
+              
             }
           }
         ]
