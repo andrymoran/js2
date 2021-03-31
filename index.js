@@ -7,6 +7,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.post("/webhook", (request, response) => {
   let tag = request.body.fulfillmentInfo.tag;
+  let tpar = request.body.fulfillmentInfo.Parameter.nombre;
+  
   let jsonResponse = {};
   if (tag == "welcome tag") {
     //fulfillment response to be sent to the agent if the request tag is equal to "welcome tag"
@@ -17,7 +19,7 @@ app.post("/webhook", (request, response) => {
             text: {
               //fulfillment text response to be sent to the agent
               text: [
-                `Hola respuesta definida para el tag "${tag}"" Si funciona`
+                `Hola respuesta definida para el tag "${tpar}"" Si funciona`
               ]
               
             }
