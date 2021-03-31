@@ -19,14 +19,10 @@ restService.post("/echo", function(req, res) {
     req.body.queryResult.parameters &&
     req.body.queryResult.parameters.echoText
   
-  if(req.body.queryResult.parameters.echoText === "1234")
-     {
+ 
        ? "Dijiste:" + req.body.queryResult.parameters.echoText
        
-     }else(req.body.queryResult.parameters.echoText ==! "1234")
-     {
-       ? "Dijiste algo distinti a 1234 que fue:" + req.body.queryResult.parameters.echoText
-     }
+  
       
       : "Seems like some problem. Speak again."+req.body;
   return res.json({
