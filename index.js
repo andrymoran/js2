@@ -7,7 +7,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.post("/webhook", (request, response) => {
   let tag = request.body.fulfillmentInfo.tag;
-  let tpar = request.body.fulfillmentInfo.text;
+  var tpar = request.body.fulfillmentInfo.text;
   
   let jsonResponse = {};
   if (tag == "welcome tag") {
