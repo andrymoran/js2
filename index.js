@@ -39,8 +39,8 @@ app.post("/webhook", (request, response) => {
     
     
 
-    SueldoPorDia =  100;//sueldo / 30;
-    SueldoPorHora = 200;//sueldoPorDia * 28 / 180; 
+    SueldoPorDia =  sueldo / 30;
+    SueldoPorHora = sueldoPorDia * 28 / 180; 
 
      //fulfillment responde si el tag es igual a  "Sueldo"
      jsonResponse = {
