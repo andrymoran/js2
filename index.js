@@ -24,7 +24,7 @@ app.post("/webhook", (request, response) => {
             text: {
               //fulfillment text response to be sent to the agent
               text: [
-                `Hola respuesta definida para el tag "${nombre}"" Si funciona`
+                `Hola respuesta definida para el tag "${ request.body.sessionInfo.parameters.nombre}"" Si funciona`
               ]
               
             }
