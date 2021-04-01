@@ -9,7 +9,7 @@ app.post("/webhook", (request, response) => {
   let tag = request.body.fulfillmentInfo.tag;
   let nombre = request.body.sessionInfo.parameters.nombre;
   let edad =request.body.sessionInfo.parameters.edad;
-  
+  let sueldo =request.body.sessionInfo.parameters.sueldo;
   
   
   
@@ -33,6 +33,34 @@ app.post("/webhook", (request, response) => {
         ]
       }
     };
+  }else if(tag == "Sueldo"){
+
+    
+    var SueldoPorDia;
+    var SueldoPorHora;
+
+    SueldoPorDia = sueldo / 30;
+    SueldoPorHora = sueldoPorDia * 28 / 180; 
+
+     //fulfillment responde si el tag es igual a  "Sueldo"
+     jsonResponse = {
+      fulfillment_response: {
+        messages: [
+          {
+            text: {
+              //fulfillment text response to be sent to the agent
+              text: [
+              
+                `Tu sueldo mensual es de "${sueldo}"" Tu suendo diario es de "${SueldoPorDia}"" Tu sueldo por hora es de "${SueldoPorHora}""`
+              ]
+              
+            }
+          }
+        ]
+      }
+    };
+
+
   } else {
     jsonResponse = {
       //fulfillment text response to be sent to the agent if there are no defined responses for the specified tag
