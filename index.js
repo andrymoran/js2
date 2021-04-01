@@ -53,7 +53,7 @@ app.post("/webhook", (request, response) => {
               //fulfillment text response to be sent to the agent
               text: [
               
-                `Tu sueldo mensual es de "${sueldo}"" Tu suendo diario es de "${SueldoPorDia}"" Tu sueldo por hora es de "${SueldoPorHora}""`
+                `Tu sueldo mensual es de "${sueldo}"" \nTu suendo diario es de "${SueldoPorDia}"" \nTu sueldo por hora es de "${SueldoPorHora}""`
               ]
               
             }
