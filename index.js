@@ -10,7 +10,8 @@ app.post("/webhook", (request, response) => {
   let nombre = request.body.sessionInfo.parameters.nombre;
   let edad =request.body.sessionInfo.parameters.edad;
   let sueldo =request.body.sessionInfo.parameters.sueldo;
-  
+  let SueldoPorDia;
+  let SueldoPorHora;
   
   
   let jsonResponse = {};
@@ -33,11 +34,10 @@ app.post("/webhook", (request, response) => {
         ]
       }
     };
-  }else if(tag == "Sueldo"){
+  }else if(tag == "sueldo"){
 
     
-    var SueldoPorDia;
-    var SueldoPorHora;
+    
 
     SueldoPorDia = sueldo / 30;
     SueldoPorHora = sueldoPorDia * 28 / 180; 
