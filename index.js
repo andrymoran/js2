@@ -15,7 +15,7 @@ app.post("/webhook", (request, response) => {
   
   
     SueldoPorDia =  sueldo / 30;
-    SueldoPorHora = sueldoPorDia * 28; 
+    SueldoPorHora = SueldoPorDia * 28 / 180; 
   
   
   let jsonResponse = {};
