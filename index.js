@@ -12,11 +12,11 @@ app.post("/webhook", (request, response) => {
   let sueldo =request.body.sessionInfo.parameters.sueldo;
   let SueldoPorDia;
   let SueldoPorHora;
-  
+  let cotizacion;
   
     SueldoPorDia =  sueldo / 30;
     SueldoPorHora = SueldoPorDia * 28 / 180; 
-  
+    cotizacion = sueldo * 13.57 / 100;
   
   let jsonResponse = {};
   if (tag == "welcome tag") {
@@ -53,7 +53,8 @@ app.post("/webhook", (request, response) => {
               //fulfillment text response to be sent to the agent
               text: [
               
-                `Tu sueldo mensual es de "${sueldo}"" \nTu suendo diario es de "${SueldoPorDia}"" \nTu sueldo por hora es de "${parseInt(SueldoPorHora)}""`
+                `Tu sueldo mensual es de "${sueldo}"" \nTu suendo diario es de "${SueldoPorDia}"" 
+                 \nTu sueldo por hora es de "${parseInt(SueldoPorHora)}"" \nTu cotizacion mensual en AFP xxx es de "${parseInt(cotizacion)}""`
               ]
               
             }
