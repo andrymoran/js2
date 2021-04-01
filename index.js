@@ -8,8 +8,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.post("/webhook", (request, response) => {
   let tag = request.body.fulfillmentInfo.tag;
   let nombre = request.body.sessionInfo.parameters.nombre;
+  let edad =request.body.sessionInfo.parameters.edad;
   
-  request.body.sessionInfo.parameters.nombre = "Yldemaro";
+  
   
   
   let jsonResponse = {};
@@ -24,7 +25,7 @@ app.post("/webhook", (request, response) => {
             text: {
               //fulfillment text response to be sent to the agent
               text: [
-                `Hola respuesta definida para el tag "${ request.body.sessionInfo.parameters.nombre}"" Si funciona`
+                `Hola "${nombre}"" Tines "${edad}"" años`
               ]
               
             }
