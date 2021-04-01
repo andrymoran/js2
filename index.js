@@ -12,7 +12,7 @@ app.post("/webhook", (request, response) => {
   let jsonResponse = {};
   if (tag == "welcome tag") {
     
-    passenger_last_name = req.body.sessionInfo.parameters.passenger_last_name;
+    passenger_last_name = req.body.session.params.user-age;
     //fulfillment response to be sent to the agent if the request tag is equal to "welcome tag"
     jsonResponse = {
       fulfillment_response: {
